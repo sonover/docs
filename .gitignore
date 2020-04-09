@@ -2,3 +2,6 @@
 /vendor
 .phpunit.result.cache
 /.idea
+yarn-error.log
+yarn.lock
+composer.lock

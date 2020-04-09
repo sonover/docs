@@ -31,7 +31,7 @@ class DocumentationController
      */
     public function showRootPage()
     {
-        $this->redirectRoot();
+        return $this->redirectRoot();
     }
 
     /**
@@ -59,21 +59,7 @@ class DocumentationController
         $content = $this->docs->get($version, $sectionPage);
 
         if (is_null($content)) {
-            $otherVersions = $this->docs->versionsContainingPage($page);
-
-
-            return response()->view('docs', [
-                'title' => 'Page not found',
-                'index' => $this->docs->getTableOfContents($version),
-                'content' => view('docs-missing', [
-                    'otherVersions' => $otherVersions,
-                    'page' => $page,
-                ]),
-                'currentVersion' => $version,
-                'versions' => Documentation::getDocVersions(),
-                'currentSection' => $otherVersions->isEmpty() ? '' : '/' . $page,
-                'canonical' => null,
-            ], 404);
+            abort(404);
         }
         $section = '';
 
