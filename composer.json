@@ -1,0 +1,53 @@
+{
+  "name": "sonover/laravel-markdown-doc",
+  "description": "Documentation",
+  "keywords": [
+    "sonover",
+    "laravel-documentation"
+  ],
+  "homepage": "https://sonover.com",
+  "authors": [
+    {
+      "name": "Clevon Noel",
+      "email": "clevon@sonover.com",
+      "homepage": "https://sonover.com"
+    }
+  ],
+  "require": {
+    "php": "^7.4",
+    "erusev/parsedown": "^1.7",
+    "erusev/parsedown-extra": "^0.8.1",
+    "spatie/yaml-front-matter": "^2.0"
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^2.16",
+    "fzaninotto/faker": "^1.9",
+    "orchestra/testbench": "^4.5",
+    "phpunit/phpunit": "^8.4",
+    "symfony/var-dumper": "^4.3|^5.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Sonover\\Docs\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Sonover\\Docs\\Tests\\": "tests"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit",
+    "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Sonover\\Docs\\DocumentationServiceProvider"
+      ]
+    }
+  }
+}

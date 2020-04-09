@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.markup-h1 {
+  @apply font-semibold;
+  @apply text-2xl;
+}
+
+.markup-h2 {
+  @apply text-lg;
+  @apply font-semibold;
+  @apply leading-tight;
+}
+
+.markup-h3 {
+  @apply font-bold;
+  @apply text-gray-700;
+}
+
+.markup h1 {
+  @apply markup-h1;
+  @apply mb-8;
+}
+
+.markup h2 {
+  @apply markup-h2;
+  @apply mb-4;
+}
+
+.markup h2:not(:first-child) {
+  @apply mt-12;
+}
+
+.markup h3 {
+  @apply markup-h3;
+  @apply mb-4;
+}
+
+.markup p {
+  @apply leading-6;
+}
+
+.markup p,
+.markup ul,
+.markup ol {
+  @apply mb-4;
+}
+
+.markup strong {
+  @apply font-semibold;
+}
+
+.markup-lists ol {
+  list-style: decimal;
+}
+
+.markup-lists ul {
+  list-style: disc;
+}
+
+.markup-lists ol,
+.markup-lists ul {
+  @apply pl-10;
+}
+
+.markup-lists li {
+  @apply mb-3;
+}
+
+.markup-lists ul li:before {
+  @apply absolute;
+  @apply left-0;
+  @apply -ml-6;
+  @apply text-green-500;
+  content: "•";
+}
+
+.markup-lists ul ul li:before {
+  @apply text-green-300;
+}
+
+.markup-links a {
+  @apply text-blue-500;
+}
+
+.markup-links a:hover {
+  @apply text-blue-600;
+}
+
+code.markup-code,
+.markup-code code {
+  @apply inline-block;
+  @apply px-1;
+  @apply bg-gray-100;
+  @apply rounded-sm;
+  @apply text-gray-600;
+}
+.docs-menu > ul {
+  @apply grid gap-8 text-xs pt-1;
+}
+
+.docs-menu > ul ul {
+  display: grid;
+  grid-gap: 1rem;
+  padding-left: 0.75rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  border-left-width: 2px;
+  @apply border-blue-500;
+}
+
+.docs-menu li.active ul {
+  @apply border-blue-500;
+}
+
+.docs-menu a:hover {
+  @apply text-blue-500;
+}
+
+.docs-menu li h2 {
+  @apply text-sm font-semibold;
+}
+
+.docs-menu > ul li {
+  line-height: 1.375;
+}
+
+.docs-menu > ul li.active {
+  @apply text-blue-500;
+}
+
+.docs-submenu {
+  display: none;
+}
+
+@media (min-width: 1540px) {
+  .docs-submenu {
+    display: block;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    width: 16rem;
+    height: 100%;
+  }
+}
+
+.docs-submenu-item {
+  font-size: 0.75rem;
+  opacity: 0.75;
+}
+
+.docs-submenu-item.is-active {
+  color: var(--blue-500);
+}
